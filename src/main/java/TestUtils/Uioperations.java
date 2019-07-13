@@ -61,11 +61,11 @@ public class Uioperations extends BaseTest {
 		 return customFormat.format(currentDate);
 	}
 	
-	public void switchToFrame(){
+	public static void switchToFrame(){
 		driver.switchTo().frame("mainpanel");
 	}
 
-  public void switchToFrameIndex() {
+  public static void switchToFrameIndex() {
 		driver.switchTo().frame(0);
 		
 	}

@@ -2,6 +2,7 @@ package TestUtils;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,7 +32,18 @@ public class Utils extends BaseTest{
 			return (randomeAlphaNumera);
 		}
 		
-		public static void WebDriverWait() {
+		public static void WaitForWebElement(WebElement element, long timeOutInSeconds) {
+		        WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+		        wait.until(ExpectedConditions.visibilityOf(element));
+		        
+			}
+		
+//		public void WebElentsWaitAction(WebElement element,long timeOutInSeconds){
+//			WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
+//			wait.until(ExpectedConditions.visibilityOf(element));
+//			}
+		
+		public static void WebDriverWaitForAlert() {
 			try {
 		        WebDriverWait wait = new WebDriverWait(driver, 4);
 		        wait.until(ExpectedConditions.alertIsPresent());

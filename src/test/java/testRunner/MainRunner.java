@@ -10,7 +10,7 @@ import cucumber.api.CucumberOptions;
 @CucumberOptions(
         features = "src\\test\\resources\\FeatureFiles",
         glue = {"stepDefinitions"},
-        tags = {"~@Ignore"},
+        tags ={"~@sanitytest"},
         monochrome = true,
         dryRun = false,
         format = {"pretty",
@@ -42,6 +42,7 @@ public class MainRunner {
     public void tearDownClass() throws Exception {
         testNGCucumberRunner.finish();
     }
+    
 }
 
 

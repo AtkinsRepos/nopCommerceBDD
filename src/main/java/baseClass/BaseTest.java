@@ -1,5 +1,4 @@
 package baseClass;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -15,15 +14,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 
-import TestUtils.Uioperations;
 import TestUtils.WebEventListener;
 import configFiles.Constants;
 import pageObjects.AddCustomersPg;
+import pageObjects.AddNewRolesPg;
 
 public class BaseTest {
 	public static WebDriver driver;
@@ -32,7 +28,8 @@ public class BaseTest {
 	public static WebEventListener eventListener;
 	public static Logger logger;
 	public static AddCustomersPg addcustomersPg;
-
+	public static AddNewRolesPg addnewrolespg;
+	
 	public BaseTest() {
 		try {
 			prop = new Properties();

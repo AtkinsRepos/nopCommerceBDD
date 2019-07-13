@@ -16,28 +16,26 @@ public class AddCustomersStepsDef extends BaseTest {
 	LoginPg loginpage;
 	Constants constants;
 
-	@When("^User clicks on customers Menu$")
-	public void user_clicks_on_customers_Menu() {
-		Utils.WebDriverWait();
-		addcustomersPg = new AddCustomersPg(driver);
-		addcustomersPg.clickoncustmenulink();
-
-	}
-
+@When("^User clicks on customers Menu$")
+public void user_click_on_customers_Menu() {
+	Utils.WebDriverWaitForAlert();
+	addcustomersPg = new AddCustomersPg(driver);
+	addcustomersPg.clickoncustmenulink();
+ 
+}
 	@When("^clicks on customers Menu Item$")
-	public void clicks_on_customers_Menu_Item() {
-		Utils.WebDriverWait();
+	public void click_on_customers_Menu_Item() {
+		Utils.WebDriverWaitForAlert();
 		addcustomersPg.clickoncustmenuItem();
-
 	}
-
+	
 	@Then("^User can view Add new customer page$")
 	public void user_can_view_Add_new_customer_page() {
-		Utils.WebDriverWait();
+		Utils.WebDriverWaitForAlert();
 		String pagetitle = addcustomersPg.getPageTitle();
 		String expectedpagetitle = "Customers / nopCommerce administration";
 		Assert.assertEquals(pagetitle, expectedpagetitle, "Page title do not match");
-		Utils.WebDriverWait();
+		Utils.WebDriverWaitForAlert();
 		addcustomersPg.clickOnAddNewCustomerBtn();
 
 	}
@@ -54,7 +52,7 @@ public class AddCustomersStepsDef extends BaseTest {
 		addcustomersPg.tickIstaxExempt();
 		addcustomersPg.tickYourstoreNameforSubscription();
 		addcustomersPg.tickSubscribeTestStore2();
-		Utils.WebDriverWait();
+		
 		//addcustomersPg.selectCustomerroleSelectmenu();
 		addcustomersPg.selectRegisteredRole();
 //		//Utils.WebDriverWait();
@@ -69,7 +67,7 @@ public class AddCustomersStepsDef extends BaseTest {
 //		addcustomersPg.selectAdminRoleInner();
 //		Utils.WebDriverWait();
 		addcustomersPg.selectManagerOfVendorBox();
-		Utils.WebDriverWait();
+		//Utils.WebDriverWait();
 		//addcustomersPg.tickActiveCheckBox();
 		addcustomersPg.setAdminComment("Not a bad idea, after all");
 
@@ -93,5 +91,6 @@ public class AddCustomersStepsDef extends BaseTest {
 		driver.quit();
 
 	}
-
+		
+	
 }

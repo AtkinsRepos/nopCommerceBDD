@@ -2,15 +2,20 @@ package pageObjects;
 
 import java.security.PublicKey;
 
+import javax.swing.table.TableColumn;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import com.google.common.collect.Table;
+
 import TestUtils.Utils;
 import baseClass.BaseTest;
 
 public class AddCustomersPg extends BaseTest {
+
 	// Constructor for the class
 	public AddCustomersPg(WebDriver driver) {
 		BaseTest.driver = driver;
@@ -37,8 +42,9 @@ public class AddCustomersPg extends BaseTest {
 	}
 
 	public void clickOnAddNewCustomerBtn() {
-		WebElement ClickAddNewCustomerBtn = driver.findElement(By.xpath("//a[contains(.,'Add new')]"));
-		ClickAddNewCustomerBtn.click();
+		Utils.WebDriverWaitForAlert();
+		WebElement clickAddNewCustomerBtn = driver.findElement(By.xpath("//a[contains(.,'Add new')]"));
+		clickAddNewCustomerBtn.click();
 
 	}
 
@@ -181,5 +187,6 @@ public class AddCustomersPg extends BaseTest {
 		WebElement SaveBtn = driver.findElement(By.xpath("//button[@name='save']"));
 		SaveBtn.click();
 	}
-
+	
+	
 }
